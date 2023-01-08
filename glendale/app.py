@@ -6,16 +6,16 @@ import logging
 
 from collections import Counter
 
-from google_indexing_api_client.config.conf import (
+from glendale.config.conf import (
     DB_FILE_PATH,
     INIT_DB_SQL_PATH,
     LOGGING_INTERVAL,
     WEB as WEB_CONFIG,
 )
-from google_indexing_api_client.db import DatabaseConnection, URLStatus
-from google_indexing_api_client.exceptions import AuthenticationDataIsOutError
-from google_indexing_api_client.log import get_logger, setup_logger
-from google_indexing_api_client.web import GoogleAPIClient
+from glendale.db import DatabaseConnection, URLStatus
+from glendale.exceptions import AuthenticationDataIsOutError
+from glendale.log import get_logger, setup_logger
+from glendale.web import GoogleAPIClient
 
 
 class ClientAction(enum.Enum):

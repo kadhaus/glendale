@@ -1,4 +1,5 @@
-# Google Indexing API client
+# GLENDALE
+### GoogLE iNDexing Api cLiEnt
 
 Lightweight indexing client for SEO Teapots :)
 
@@ -13,5 +14,5 @@ $ pipenv install -d
 Usage of the client defines in CLI help. Read it before use
 
 ```shell
-$ python -m google_indexing_api_client -h # for help
+$ python -m glendale -h # for help
 ```

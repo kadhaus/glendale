@@ -7,8 +7,8 @@ from google.auth.transport.requests import AuthorizedSession
 from pathlib import Path
 from requests import Response
 
-from google_indexing_api_client.exceptions import AuthenticationDataIsOutError
-from google_indexing_api_client.log import get_logger
+from glendale.exceptions import AuthenticationDataIsOutError
+from glendale.log import get_logger
 
 
 class GoogleAPIClient:

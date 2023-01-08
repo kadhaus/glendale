@@ -7,8 +7,8 @@ import sqlite3
 from collections import Counter
 from pathlib import Path
 
-from google_indexing_api_client.log import get_logger
-from google_indexing_api_client.config.conf import LOGGING_INTERVAL
+from glendale.log import get_logger
+from glendale.config.conf import LOGGING_INTERVAL
 
 
 class URLStatus(enum.Enum):

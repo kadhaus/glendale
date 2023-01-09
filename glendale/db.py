@@ -99,17 +99,3 @@ class DatabaseConnection:
             return self._urls_for_indexing.__next__()
         except StopIteration:
             return None
-
-
-if __name__ == '__main__':
-    from config.conf import DB_FILE_PATH
-    db = DatabaseConnection(db_filepath=DB_FILE_PATH)
-
-    print(id(db.read_cursor))
-    print(id(db.write_cursor))
-
-    # url = db.next_url_for_indexing
-
-    # db.update_url_status(url, URLStatus.SENT_TO_INDEX)
-
-    # db.upload_urls_from_file(_SRC_DIR / 'data_source/urls_batch.csv')

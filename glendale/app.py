@@ -183,15 +183,19 @@ class MainApplication:
                     log_info['api_keys_used'] += 1
                 except AuthenticationDataIsOutError:
                     self.logger.info('Out of AuthenticationData. Terminating')
+                    break
                 repeat_current_url = True
                 continue
             db.update_url_status(url, URLStatus.SENT_TO_INDEX)
             log_info['processed_urls'] += 1
 
             if log_info['processed_urls'] % LOGGING_INTERVAL == 0:
-                self.logger.info('Processed %(processed_urls)s, %(api_keys_used)s', log_info)
+                self.logger.info(
+                    'Processed %(processed_urls)s, keys_used %(api_keys_used)s', log_info,
+                )
         self.logger.info('Process finished. Stats: %r', log_info)
 
+        client.close()
         db.close_connection()
 
     def process_statistic(self, detailed: bool, output: Optional[TextIO] = None) -> None:

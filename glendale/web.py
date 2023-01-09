@@ -21,6 +21,10 @@ class GoogleAPIClient:
         self._current_credentials: Optional[service_account.Credentials] = None
         self._session: Optional[AuthorizedSession] = None
 
+    def close(self):
+        if self._session:
+            self._session.close()
+
     @staticmethod
     def _api_key_paths_generator(api_keys_dir: Path) -> Generator[Path, None, None]:
         for api_key_path in api_keys_dir.iterdir():

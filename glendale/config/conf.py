@@ -5,7 +5,7 @@ from pathlib import Path
 _SRC_DIR = Path(__file__).parent.parent
 
 INIT_DB_SQL_PATH = _SRC_DIR / 'static/init_db.sql'
-DB_FILE_PATH = _SRC_DIR / 'data_source/main.sqlite3'
+DB_FILE_PATH = _SRC_DIR / 'db.sqlite3'
 
 WEB: Dict[str, Any] = dict(
     api_keys_dir=_SRC_DIR / 'api_keys',
